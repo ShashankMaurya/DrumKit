@@ -30,7 +30,6 @@ function playSound(key) {
 
 // adding keyPress animation
 function btnAnimation(key){
-    console.log('.'+key);
     document.querySelector('.'+key).classList.add('pressed');
     console.log(document.querySelector('.'+key).classList);
      setTimeout(function() {
@@ -42,14 +41,14 @@ function btnAnimation(key){
 
 for (var i = 0; i < document.querySelectorAll('.drum').length; i++) {
     document.querySelectorAll('.drum')[i].addEventListener('click', function () {
-        console.log(this.textContent.toLowerCase());
+        // console.log(this.textContent.toLowerCase());
         playSound(this.textContent.toLowerCase());
         btnAnimation(this.textContent.toLowerCase());
     });
 }
 
 document.addEventListener('keydown', function(event){
-    console.log(event.key);
+    // console.log(event.key);
     if (allKeys.includes(event.key)){
         playSound(event.key);
         btnAnimation(event.key);
